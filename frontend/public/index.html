@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Time & Weather Dashboard</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <!-- ===================================================================== -->
+    <!-- HEADER -->
+    <!-- ===================================================================== -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <span class="logo-icon">🌍</span>
+                <h1>World Time & Weather</h1>
+            </div>
+            <p class="subtitle">Real-time time and weather for 6 world regions</p>
+        </div>
+    </header>
+
+    <!-- ===================================================================== -->
+    <!-- MAIN CONTENT -->
+    <!-- ===================================================================== -->
+    <main class="main">
+        <div class="container">
+            <!-- Status Indicator -->
+            <div class="status-bar">
+                <div class="status-indicator" id="statusIndicator">
+                    <span class="status-dot"></span>
+                    <span class="status-text">Loading...</span>
+                </div>
+                <div class="last-update" id="lastUpdate">
+                    Last updated: <span>--:--:--</span>
+                </div>
+            </div>
+
+            <!-- Regions Grid -->
+            <div class="regions-grid" id="regionsGrid">
+                <!-- Region cards will be inserted here by JavaScript -->
+                <div class="loading-spinner">
+                    <div class="spinner"></div>
+                    <p>Loading data...</p>
+                </div>
+            </div>
+
+            <!-- Error Message -->
+            <div class="error-message" id="errorMessage" style="display: none;">
+                <h3>Error Loading Data</h3>
+                <p id="errorDetails"></p>
+                <button onclick="location.reload()">Retry</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- ===================================================================== -->
+    <!-- FOOTER -->
+    <!-- ===================================================================== -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 World Time & Weather Dashboard | Data updates every 30 seconds</p>
+            <p class="footer-info">
+                Using <span class="badge">OpenWeatherMap API</span>
+                and <span class="badge">Python Flask</span>
+                + <span class="badge">Node.js Express</span>
+            </p>
+        </div>
+    </footer>
+
+    <!-- ===================================================================== -->
+    <!-- SCRIPTS -->
+    <!-- ===================================================================== -->
+    <script src="/script.js"></script>
+</body>
+</html>
