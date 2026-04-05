@@ -7,9 +7,9 @@ metadata:
 spec:
   replicas: 3
   selector:
-  matchLabels:
-    app: weather
-    name : backend
+    matchLabels:
+      app: weather
+      name : backend
   template:
     metadata:
       labels:
@@ -22,16 +22,16 @@ spec:
         resources:
           requests:
             cpu: "20m"
-            memory: "55MI"
+            memory: "55Mi"
         env:
         - name : FLASK_ENV
           value: development
         - name: DEBUG
-          value: True
+          value: "True"
         - name:  HOST
           value:  0.0.0.0     
         - name:  PORT
-          value: 5000
+          value: "5000"
         - name : WEATHER_API_KEY 
           value: demo_key
         - name : LOG_LEVEL

@@ -7,9 +7,9 @@ metadata:
 spec:
   replicas: 3
   selector:
-  matchLabels:
-    app: weather
-    name : frontend
+    matchLabels:
+      app: weather
+      name : frontend
   template:
     metadata:
       labels:
@@ -22,14 +22,14 @@ spec:
         resources:
           requests:
             cpu: "20m"
-            memory: "55MI"
+            memory: "55Mi"
         env:
         - name:  NODE_ENV
           value:  development     
         - name:  PORT
-          value: 3000
+          value: "3000"
         - name : BACKEND_URL 
-          value: http://backend:5000
+          value: "http://backend:5000"
         - name : LOG_LEVEL
           value: info
         ports:
