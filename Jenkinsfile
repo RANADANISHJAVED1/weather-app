@@ -49,6 +49,7 @@ pipeline {
                             kubectl apply -f backend-deployment.yml
                             kubectl apply -f frontend-deployment.yml
                             kubectl apply -f services.yml
+                            kubectl apply -f ingress.yml
                         '''
                     }
                 }
