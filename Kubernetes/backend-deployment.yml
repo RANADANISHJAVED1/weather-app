@@ -16,6 +16,8 @@ spec:
         app : weather
         name:  backend
     spec:
+      imagePullSecrets:
+      - name: ecr-secret
       containers:
       - image:  195216432339.dkr.ecr.eu-west-3.amazonaws.com/weatherapp/backend:latest
         name:  backend

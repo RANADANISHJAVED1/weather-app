@@ -16,11 +16,11 @@ spec:
         app : weather
         name:  frontend
     spec:
+      imagePullSecrets:
+      - name: ecr-secret
       containers:
       - image:  195216432339.dkr.ecr.eu-west-3.amazonaws.com/weatherapp/frontend:latest
         name:  frontend
-      imagePullSecrets:
-      - name: ecr-secret
         resources:
           requests:
             cpu: "20m"
