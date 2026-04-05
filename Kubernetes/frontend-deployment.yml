@@ -1,38 +1,38 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: frontend
+  name:  frontend
   labels:
-    name: frontend
+    name:  frontend
 spec:
   replicas: 3
   selector:
     matchLabels:
       app: weather
-      name: frontend
+      name : frontend
   template:
     metadata:
       labels:
-        app: weather
-        name: frontend
+        app : weather
+        name:  frontend
     spec:
       imagePullSecrets:
-        - name: ecr-secret
+      - name: ecr-secret
       containers:
-        - name: frontend
-          image: 195216432339.dkr.ecr.eu-west-3.amazonaws.com/weatherapp/frontend:latest
-          ports:
-            - containerPort: 3000
-          env:
-            - name: NODE_ENV
-              value: development
-            - name: PORT
-              value: "3000"
-            - name: BACKEND_URL
-              value: "http://weather-app-backend:5000"   # Use the actual backend service name
-            - name: LOG_LEVEL
-              value: info
-          resources:
-            requests:
-              cpu: "20m"
-              memory: "55Mi"
+      - image:  195216432339.dkr.ecr.eu-west-3.amazonaws.com/weatherapp/frontend:latest
+        name:  frontend
+        resources:
+          requests:
+            cpu: "20m"
+            memory: "55Mi"
+        env:
+        - name:  NODE_ENV
+          value:  development     
+        - name:  PORT
+          value: "3000"
+        - name : BACKEND_URL 
+          value: "http://backend:5000"
+        - name : LOG_LEVEL
+          value: info
+        ports:
+        - containerPort:  3000
