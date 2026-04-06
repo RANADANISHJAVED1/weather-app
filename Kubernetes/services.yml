@@ -6,11 +6,10 @@ spec:
   selector:
     name:  frontend
     app: weather
-  type:  NodePort
+  type:  LoadBalancer
   ports:
   - port:  3000
     targetPort:  3000
-    nodePort: 32232
   
 ---
 
