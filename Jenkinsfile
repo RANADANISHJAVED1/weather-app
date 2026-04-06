@@ -20,11 +20,11 @@ pipeline {
                 dir('weather-app') {
                     dir('frontend'){
                         sh "docker build -t weatherapp/frontend ."
-                        sh "docker tag weatherapp/frontend:latest 195216432339.dkr.ecr.eu-west-3.amazonaws.com/weatherapp/frontend:latest"
+                        sh "docker tag weatherapp/frontend:latest 195216432339.dkr.ecr.eu-west-3.amazonaws.com/weatherapp/frontend:v1.1"
                     }
                     dir('backend'){
                         sh "docker build -t weatherapp/backend ."
-                        sh "docker tag weatherapp/frontend:latest 195216432339.dkr.ecr.eu-west-3.amazonaws.com/weatherapp/frontend:latest"
+                        sh "docker tag weatherapp/frontend:latest 195216432339.dkr.ecr.eu-west-3.amazonaws.com/weatherapp/frontend:v1.1"
                     }
                 }
             }
@@ -33,10 +33,10 @@ pipeline {
             steps{
                 dir('weather-app') {
                     dir('frontend'){
-                        sh "docker push 195216432339.dkr.ecr.eu-west-3.amazonaws.com/weatherapp/frontend:latest"
+                        sh "docker push 195216432339.dkr.ecr.eu-west-3.amazonaws.com/weatherapp/frontend:v1.1"
                     }
                     dir('backend'){
-                        sh "docker push 195216432339.dkr.ecr.eu-west-3.amazonaws.com/weatherapp/backend:latest"
+                        sh "docker push 195216432339.dkr.ecr.eu-west-3.amazonaws.com/weatherapp/backend:v1.1"
                     }
                 }
             }

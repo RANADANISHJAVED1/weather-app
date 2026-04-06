@@ -19,7 +19,7 @@ spec:
       imagePullSecrets:
         - name: ecr-secret
       containers:
-      - image:  195216432339.dkr.ecr.eu-west-3.amazonaws.com/weatherapp/frontend:latest
+      - image:  195216432339.dkr.ecr.eu-west-3.amazonaws.com/weatherapp/frontend:v1.1
         name:  frontend
         resources:
           requests:
