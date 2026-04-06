@@ -5,6 +5,7 @@ metadata:
 spec:
   selector:
     name:  frontend
+    app : weather
   type:  LoadBalancer
   ports:
   - port:  3000
@@ -19,6 +20,7 @@ metadata:
 spec:
   selector:
     name:  backend
+    app : weather
   type:  ClusterIP
   ports:
   - port:  5000
