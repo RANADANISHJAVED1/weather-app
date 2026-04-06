@@ -7,7 +7,7 @@
 // CONFIGURATION
 // ============================================================================
 
-const API_URL = 'http://localhost:3000/api';
+const API_URL = '/api';
 const REFRESH_INTERVAL = 30000; // 30 seconds
 const TIMEZONE_OFFSET = new Date().getTimezoneOffset();
 
