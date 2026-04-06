@@ -1,5 +1,9 @@
 pipeline {
     agent any
+    environment {
+        IMAGE_VERSION = 'v1.2'  // your version here
+        ECR_REPO = '195216432339.dkr.ecr.eu-west-3.amazonaws.com/weatherapp'
+    }
     stages {
         stage("Cleaning Pipeline"){
             steps{
@@ -20,12 +24,10 @@ pipeline {
                 dir('weather-app') {
                     dir('frontend'){
                         sh "docker build -t weatherapp/frontend ."
-                        sh "docker tag weatherapp/frontend:latest 195216432339.dkr.ecr.eu-west-3.amazonaws.com/weatherapp/frontend:v1.1"
-                    }
+                        sh "docker tag weatherapp/frontend:latest ${ECR_REPO}/frontend:${IMAGE_VERSION}"                    }
                     dir('backend'){
                         sh "docker build -t weatherapp/backend ."
-                        sh "docker tag weatherapp/frontend:latest 195216432339.dkr.ecr.eu-west-3.amazonaws.com/weatherapp/frontend:v1.1"
-                    }
+                        sh "docker tag weatherapp/backend:latest ${ECR_REPO}/backend:${IMAGE_VERSION}"                    }
                 }
             }
         }
@@ -33,11 +35,9 @@ pipeline {
             steps{
                 dir('weather-app') {
                     dir('frontend'){
-                        sh "docker push 195216432339.dkr.ecr.eu-west-3.amazonaws.com/weatherapp/frontend:v1.1"
-                    }
+                        sh "docker push ${ECR_REPO}/frontend:${IMAGE_VERSION}"                    }
                     dir('backend'){
-                        sh "docker push 195216432339.dkr.ecr.eu-west-3.amazonaws.com/weatherapp/backend:v1.1"
-                    }
+                        sh "docker push ${ECR_REPO}/backend:${IMAGE_VERSION}"                    }
                 }
             }
         }
