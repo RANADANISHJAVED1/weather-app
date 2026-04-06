@@ -9,11 +9,11 @@ spec:
   selector:
     matchLabels:
       app: weather
-      name : frontend
+      name: frontend
   template:
     metadata:
       labels:
-        app : weather
+        app: weather
         name:  frontend
     spec:
       imagePullSecrets:
@@ -30,9 +30,9 @@ spec:
           value:  development     
         - name:  PORT
           value: "3000"
-        - name : BACKEND_URL 
+        - name: BACKEND_URL 
           value: "http://backend:5000"
-        - name : LOG_LEVEL
+        - name: LOG_LEVEL
           value: info
         ports:
         - containerPort:  3000

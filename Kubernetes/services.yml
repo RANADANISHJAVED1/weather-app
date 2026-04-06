@@ -5,12 +5,12 @@ metadata:
 spec:
   selector:
     name:  frontend
-    app : weather
+    app: weather
   type:  NodePort
   ports:
   - port:  3000
     targetPort:  3000
-    nodePort : 32232
+    nodePort: 32232
   
 ---
 
