@@ -14,9 +14,11 @@ spec:
         app: weather
         name: backend
     spec:
+      imagePullSecrets:
+        - name: ecr-secret
       containers:
         - name: backend
-          image: danishplayconsole1/weather-app-backend:v1.1
+          image: 195216432339.dkr.ecr.eu-west-3.amazonaws.com/weatherapp/backend:latest 
           ports:
             - containerPort: 5000
           env:
